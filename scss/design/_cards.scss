@@ -1,0 +1,77 @@
+@forward "../globals/colors";
+
+%card {
+  padding: 2.5em;
+  border-radius: 0.625rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+
+.card {
+  &--violet {
+    @extend %card;
+    background-color: var(--Moderate-violet);
+    position: relative;
+
+    &::before {
+      content: url("../../images/bg-pattern-quotation.svg");
+      position: absolute;
+      top: 0;
+      right: 10%;
+    }
+  }
+
+  &--gray {
+    @extend %card;
+    background-color: var(--Very-dark-grayish-blue);
+  }
+
+  &--light {
+    @extend %card;
+    background-color: var(--White);
+  }
+
+  &--dark {
+    @extend %card;
+    background-color: var(--Very-dark-blackish-blue);
+  }
+
+  &__image {
+    border-radius: 50%;
+    width: 2rem;
+
+    &--border-light {
+      border: 2px solid var(--Light-gray);
+    }
+
+    &--border-violet {
+      border: 2px solid var(--Moderate-violet);
+    }
+  }
+
+  &__name {
+    margin-bottom: 0;
+    opacity: 0.7;
+    font-size: 1rem;
+  }
+
+  &__sub-name {
+    margin-bottom: 0;
+    opacity: 0.5;
+  }
+
+  &__name,
+  &__sub-name,
+  &__title {
+    color: var(--White);
+  }
+
+  &__name--dark,
+  &__sub-name--dark,
+  &__title--dark {
+    color: var(--Very-dark-grayish-blue);
+  }
+
+  &__text {
+    color: var(--Light-gray);
+  }
+}
